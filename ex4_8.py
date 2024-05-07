@@ -16,16 +16,22 @@ def solve():
 
 from math import sqrt
 
-# Perimeter
-perimeter = 24
+# Chu vi
+P = 24
 
-# Generate all possible combinations of side lengths
-triangles = [(a, b, perimeter - a - b) for a in range(1, 11) for b in range(1, 11)]
+Generate all possible combinations of side lengths
+tam_giac_vuong  = [(a, b, P - a - b) for a in range(1, 11) for b in range(1, 11)]
 
 # Filter out combinations where all side lengths are less than or equal to 10 cm
-triangles = [(a, b, c) for (a, b, c) in triangles if c <= 10]
+tam_giac_vuong = [(a, b, c) for (a, b, c) in tam_giac_vuong if c <= 10]
 
 # Filter out combinations where a^2 + b^2 = c^2 (forming a right triangle)
-triangles = [(a, b, c) for (a, b, c) in triangles if a**2 + b**2 == c**2]
+tam_giac_vuong = [(a, b, c) for (a, b, c) in tam_giac_vuong if a**2 + b**2 == c**2]
 
-print(triangles)
+# print(tam_giac_vuong)
+for a in range (1,11):
+    for b in range (1,11):
+()
+            
+
+

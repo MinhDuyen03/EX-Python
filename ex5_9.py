@@ -144,18 +144,18 @@ data = [
     # main()
 
 
-# # for i in data:
-#     # print(i["name"][0])
-#     if i["name"][0] == "H":
-#         print(i["name"])
-#         print(i["population"])
+for i in data:
+    # print(i["name"][0])
+    if i["name"][0] == "H":
+        print(i["name"])
+        print(i["population"])
         
-# list = []
-# for i in data:
-#     list.append(i["name"])
-# print(list)
-# list.sort()
-# print(list)
+list = []
+for i in data:
+    list.append(i["name"])
+print(list)
+list.sort()
+print(list)
         
 list = []
 for i in data:

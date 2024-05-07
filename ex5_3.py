@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 
-data = """Dictionaries are sometimes found in other languages as “associative memories” or “associative arrays”. Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can’t use lists as keys, since lists can be modified in place using index assignments, slice assignments."""  # NOQA
+data = """Dictionaries are sometimes found in other languages as “associative memories” 
+or “associative arrays”. Unlike sequences, which are indexed by a range of numbers
+, dictionaries are indexed by keys, which can be any immutable type; 
+strings and numbers can always be keys. Tuples can be used as keys 
+if they contain only strings, numbers, or tuples; 
+if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. 
+You can’t use lists as keys, since lists can be modified in place using index assignments, slice assignments."""  # NOQA
 
 
 # Chú ý: dấu “ không phải double quotes "
@@ -20,29 +26,47 @@ def solve(input_data):
     return result
 
 
-def main():
+# def main():
     # Đây là một cách làm khác với kiểu dữ liệu có sẵn
     # trong thư viện collections của Python
     # Học viên chỉ tham khảo, không làm bài theo cách này.
     # Hãy dùng string & dict/list để làm.
-    from collections import Counter
+    #from collections import Counter
 
     # Regex (re) là một công cụ xử lý string khác so với các method của
     # `str`, linh hoạt nhưng phức tạp, khó đọc, dễ sai.
     # https://pymotw.com/3/re/
-    import re
+    # import re
 
-    cleaned = re.sub(r"“|”|\.|,", " ", data)
-    c = Counter(cleaned.split())
-    top = c.most_common(4)
+    # cleaned = re.sub(r"“|”|\.|,", " ", data)
+    # c = Counter(cleaned.split())
+    # top = c.most_common(4)
 
-    result = solve(data)
-    # convert to dict because order does not matter here
-    assert dict(result[:4]) == dict(top), (result[:4], top)
+    # result = solve(data)
+    # # convert to dict because order does not matter here
+    # assert dict(result[:4]) == dict(top), (result[:4], top)
 
     # In ra 10 từ xuất hiện nhiều nhất kèm số lần xuất hiện
     # Viết code in ra màn hình sau dòng này
+word_count = {}
+data1 = data.split()
+for words in data1:
+    if words in word_count:
+       word_count[words] += 1 
+    else:
+        word_count[words] = 1      
+# for word, count in word_count.items():
+#     print(f"{word}: {count}")   
+most_common_10 = sorted(word_count.items(), key=lambda x: x[1], reverse=True)[:10]
+print(most_common_10)
+    
 
 
-if __name__ == "__main__":
-    main()
+   
+
+
+
+
+#
+
+

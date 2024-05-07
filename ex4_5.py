@@ -15,7 +15,6 @@ def sum_and_product(numbers):
         product *= num
     return sum, product
 
-# Example usage:
 numbers = [1, 2, 3, 4]
 
 sum, product = sum_and_product(numbers)
